@@ -35,7 +35,16 @@ conn,addr=sock.accept()
 
 
 #Data receive loop
-while(True):
-    conn.recv(1024)
+#With Exception Handling
+try:
+    while(True):
+        a=conn.recv(1024)
+        print(a.decode())
+except KeyboardInterrupt:
+    print('exit and close socket')
+    conn.close()
+    sock.close()
 
-#sock.close() -- very Important
+
+
+    #sock.close() -- very Important

@@ -14,8 +14,13 @@ sock= socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 sock.connect(('127.0.0.1',50001))
 
 #Infinite loop to Accept user input and send to server
-while(True):
-    sock.send(input().encode())
+try:
+    while(True):
+        sock.send(input().encode())
+except KeyboardInterrupt:
+        print ('closing socket')
+        sock.close()
+
 
 #sock.close() -- very Important
 
