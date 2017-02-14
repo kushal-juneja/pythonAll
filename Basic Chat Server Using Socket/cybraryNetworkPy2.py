@@ -16,3 +16,6 @@ sock.connect(('127.0.0.1',50001))
 #Infinite loop to Accept user input and send to server
 while(True):
     sock.send(input().encode())
+
+#sock.close() -- very Important
+

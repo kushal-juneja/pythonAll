@@ -38,3 +38,4 @@ conn,addr=sock.accept()
 while(True):
     conn.recv(1024)
 
+#sock.close() -- very Important
